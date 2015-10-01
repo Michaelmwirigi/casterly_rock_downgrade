@@ -41,9 +41,9 @@ class Welcome extends CI_Controller {
 			$data = $this->user_model->show_from_cart($user);
 			foreach ($data as $key => $value) {
 				$this->cart .= '<form class="item" action="welcome/remove_from_cart" method="post" enctype="multipart/form-data">
-				<div class="header">'.$value["quantity"].' '.$value["ProdName"].
-				'<input type="hidden" name="cartid" value="'.$value["cartid"].'">'
-				.'<div class="ui right floated tiny buttons">
+				<div class="header"><p class="c_name">'.$value["ProdName"].'</p><p class="c_amt">'.$value["quantity"].'</p>
+				<input type="hidden" name="cartid" value="'.$value["cartid"].'">'
+				.'<div class="ui right floated tiny buttons ">
 				  <a class="ui orange button edit_cart">Change</a>
 				  <div class="or"></div>
 				  <button type="submit" class="ui red button">Remove</button>

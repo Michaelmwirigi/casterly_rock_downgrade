@@ -50,9 +50,18 @@
     </div>
   </header>
 <!-- Sidebar Menu -->
-<div class="ui right orange vertical large very wide sidebar menu cart_sidebar">
-  <a class="active item">CART<p class="ui right floated header"><?php //echo $cart_user; ?>
+<div class="ui right vertical large very wide sidebar menu cart_sidebar">
+  <a class="item labels">SHOPPING CART<p class="ui right floated header"><?php //echo $cart_user; ?>
   </p></a>
+  <div class="active item">
+    <p class="c_name">
+      Item
+    </p>
+    <p class="c_amt">
+      Servings
+    </p>
+    <p class="c_edit">Edit Order</p>
+  </div>
   <?php
     echo $cart;
   ?>
