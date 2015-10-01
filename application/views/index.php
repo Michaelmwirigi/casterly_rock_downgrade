@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <?php
+=======
+<?php 
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
   if ($this->session->userdata('logged_in') == TRUE) {
     $links = '<a class="ui inverted button" href="welcome/logout">Log Out</a>';
     $links2 = '<div class="item">
@@ -15,7 +19,11 @@
           <a class="ui orange button signup_btn">Sign Up</a>
         </div>';
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 ?>
 <html>
 <head>
@@ -31,13 +39,18 @@
   <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
   <script src="<?php echo base_url();?>assets/dist/semantic.js"></script>
   <script src="<?php echo base_url();?>assets/js/main.js"></script>
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 </head>
 <body>
 <!-- Following Menu -->
   <header class="ui large top fixed hidden menu">
     <div class="ui container">
       <a class="active item">Home</a>
+<<<<<<< HEAD
       <a href="products_c" class="item">Products</a>
       <a class="item">About Us</a>
       <a class="item">Contact Us</a>
@@ -48,6 +61,12 @@
             <i class="search link icon"></i>
           </div>
       </div>
+=======
+      <a href="products_c" class="item">Menu</a>
+      <a class="item">Company</a>
+      <a class="item">Careers</a>
+      <div class="right menu">
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
         <?php echo $links2;?>
          <div class="item">
           <a class="ui orange icon button cart_button"><i class="cart icon"></i></a>
@@ -56,6 +75,7 @@
     </div>
   </header>
 <!-- Sidebar Menu -->
+<<<<<<< HEAD
 <div class="ui right orange vertical large very wide sidebar menu cart_sidebar">
   <a class="active item">CART<p class="ui right floated header"><?php //echo $cart_user; ?>
   </p></a>
@@ -63,6 +83,24 @@
     echo $cart;
   ?>
 
+=======
+<div class="ui right vertical large very wide sidebar menu cart_sidebar">
+  <a class="item labels">SHOPPING CART<p class="ui right floated header"><?php //echo $cart_user; ?>
+  </p></a>
+  <div class="active item">
+    <p class="c_name">
+      Item
+    </p>
+    <p class="c_amt">
+      Servings
+    </p>
+    <p class="c_edit">Edit Order</p>
+  </div>
+  <?php
+    echo $cart;
+  ?>
+  
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 </div>
 
 
@@ -78,12 +116,15 @@
         <a class="item">Careers</a> -->
         <a class="active item logo"><img class="ui small image" src="<?php echo ASSETS_URL;?>images/CastarlyRock.png"></a>
         <div class="right item">
+<<<<<<< HEAD
           <div class="item searchbar">
               <div class="ui inverted icon input">
                 <input type="text" placeholder="Search...">
                 <i class="search link icon"></i>
               </div>
           </div>
+=======
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
           <?php echo $links;?>
           <a class="ui orange icon inverted button cart_button"><i class="cart icon"></i></a>
         </div>
@@ -127,7 +168,11 @@
               <div class="six wide center aligned column">
                 <button class="ui orange button">ADD</button>
               </div>
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
             </div>
           </div>
         </form>
@@ -224,9 +269,15 @@
   <div class="header">
     Login here
   </div>
+<<<<<<< HEAD
 
 
 
+=======
+  
+ 
+    
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
     <form class="ui form" id="home_login" action="welcome/login" method="post" enctype="multipart/form-data" >
        <div class="field">
         <label>Email Address</label>
@@ -238,7 +289,11 @@
       </div>
       <button class="ui positive labeled icon button" type="submit"><i class="checkmark icon"></i>Submit</button>
     </form>
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 </div>
 <!-- signup form -->
 <div class="ui modal signup_form">
@@ -258,7 +313,11 @@
       <div class="field">
         <label>Telephone Number</label>
         <input type="text" name="tel" id="tel" placeholder="Telephone Number">
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
       </div>
       <div class="field">
         <label>Password</label>
@@ -278,7 +337,11 @@
   <div class="header">
     Cart
   </div>
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 <div class="ui middle aligned divided list all_contacts">
   <ul class="item">
     <?php

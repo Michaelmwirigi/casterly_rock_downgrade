@@ -8,6 +8,39 @@ header{
     }
   }
 }
+<<<<<<< HEAD
+=======
+
+.cart_sidebar{
+  .item.labels{
+    color: #f2711c !important;
+     font-weight: bold;
+  }
+  .item.active{
+    font-weight: bold;
+  }
+  .item{
+    vertical-align: middle;
+    .c_name{
+      display: inline-block !important;
+      width: 25%;
+      text-align: center;
+    }
+    .c_amt{
+      display: inline-block !important;
+      width: 20%;
+      text-align: center;
+    }
+    .c_edit{
+      display: inline-block !important;
+      width: 45%;
+      text-align: center;
+    }
+  }
+}
+
+
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 .hidden.menu {
   display: none;
 }
@@ -53,6 +86,11 @@ header{
   }
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 .ui.vertical.stripe {
   padding: 7em 0em;
   background-color: #ffffff;

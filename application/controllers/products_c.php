@@ -65,7 +65,11 @@ class Products_c extends CI_Controller {
 		foreach ($product_data as $key => $value2) {
 
 			$this->product_list.= 
+<<<<<<< HEAD
 			'<form class="column" action="products_c/edit_cart" method="post" enctype="multipart/form-data">
+=======
+			'<form class="column" action="products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 			        <div class="ui card">
 			            <div class="image">
 			              <img src="'.ASSETS_URL.''.$value2["ImageAddr"].'">
@@ -79,6 +83,10 @@ class Products_c extends CI_Controller {
 			                Our juicy chicken burger with crispy lettuce,crunchy red onins and zippy tahini sauce will make you cry..trust us
 			              </div>
 			            </div>
+<<<<<<< HEAD
+=======
+			            <input type="hidden" name="product" value="'.$value2["Productid"].'">
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 			            <button class="ui bottom attached button">
 				            <i class="add icon"></i>
 				            Add to cart
@@ -93,6 +101,20 @@ class Products_c extends CI_Controller {
 		
 	}
 
+<<<<<<< HEAD
+=======
+	public function add_to_cart_products()
+	{
+		$insert = $this->user_model->add_product_to_cart();
+
+		if ($insert) {
+			redirect('products_c');
+		} else {
+		print "Failed to add product";
+		}
+	}
+
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 
 
 
@@ -126,7 +148,11 @@ class Products_c extends CI_Controller {
       
       <span class="item c_quantitiy">
       <select class="ui admin dropdown" name="quantity">
+<<<<<<< HEAD
         <option value="">No of pieces</option>
+=======
+        <option value="">No of servings</option>
+>>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>
