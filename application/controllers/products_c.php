@@ -26,7 +26,7 @@ class Products_c extends CI_Controller {
 	 */
 	public function index()
 	{
-		
+
 		$data['cart'] = $this->create_cart();
 		$data['cart2'] = $this->create_full_cart();
 		$data['product_list'] = $this->display_products();
@@ -64,12 +64,10 @@ class Products_c extends CI_Controller {
 		$product_data = $this->user_model->show_products();
 		foreach ($product_data as $key => $value2) {
 
-			$this->product_list.= 
-<<<<<<< HEAD
-			'<form class="column" action="products_c/edit_cart" method="post" enctype="multipart/form-data">
-=======
+			$this->product_list.=
+
 			'<form class="column" action="products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
->>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
+
 			        <div class="ui card">
 			            <div class="image">
 			              <img src="'.ASSETS_URL.''.$value2["ImageAddr"].'">
@@ -83,26 +81,22 @@ class Products_c extends CI_Controller {
 			                Our juicy chicken burger with crispy lettuce,crunchy red onins and zippy tahini sauce will make you cry..trust us
 			              </div>
 			            </div>
-<<<<<<< HEAD
-=======
 			            <input type="hidden" name="product" value="'.$value2["Productid"].'">
->>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 			            <button class="ui bottom attached button">
 				            <i class="add icon"></i>
 				            Add to cart
 			            </button>
 			        </div>
-			    
+
 		    </form>
 		        ';
 		}
 
 		return $this->product_list;
-		
+
 	}
 
-<<<<<<< HEAD
-=======
+
 	public function add_to_cart_products()
 	{
 		$insert = $this->user_model->add_product_to_cart();
@@ -114,7 +108,7 @@ class Products_c extends CI_Controller {
 		}
 	}
 
->>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
+
 
 
 
@@ -145,14 +139,12 @@ class Products_c extends CI_Controller {
           <option value="westlands">Westlands</option>
         </select>
       </span>
-      
+
       <span class="item c_quantitiy">
       <select class="ui admin dropdown" name="quantity">
-<<<<<<< HEAD
-        <option value="">No of pieces</option>
-=======
+
         <option value="">No of servings</option>
->>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
+
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>
@@ -170,7 +162,7 @@ class Products_c extends CI_Controller {
 		// echo "<pre>";print_r($this->cart);die();
 		return $this->cart2;
 	}
-	
+
 	public function login()
 	{
 	  $email=$this->input->post('email');
@@ -275,7 +267,4 @@ class Products_c extends CI_Controller {
 	// }
 
 
-}	
-
-
-
+}
