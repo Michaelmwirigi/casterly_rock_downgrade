@@ -26,7 +26,7 @@ class Products_c extends CI_Controller {
 	 */
 	public function index()
 	{
-		
+
 		$data['cart'] = $this->create_cart();
 		$data['cart2'] = $this->create_full_cart();
 		$data['product_list'] = $this->display_products();
@@ -64,8 +64,10 @@ class Products_c extends CI_Controller {
 		$product_data = $this->user_model->show_products();
 		foreach ($product_data as $key => $value2) {
 
-			$this->product_list.= 
+			$this->product_list.=
+
 			'<form class="column" action="products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+
 			        <div class="ui card">
 			            <div class="image">
 			              <img src="'.ASSETS_URL.''.$value2["ImageAddr"].'">
@@ -85,14 +87,15 @@ class Products_c extends CI_Controller {
 				            Add to cart
 			            </button>
 			        </div>
-			    
+
 		    </form>
 		        ';
 		}
 
 		return $this->product_list;
-		
+
 	}
+
 
 	public function add_to_cart_products()
 	{
@@ -104,6 +107,7 @@ class Products_c extends CI_Controller {
 		print "Failed to add product";
 		}
 	}
+
 
 
 
@@ -135,10 +139,12 @@ class Products_c extends CI_Controller {
           <option value="westlands">Westlands</option>
         </select>
       </span>
-      
+
       <span class="item c_quantitiy">
       <select class="ui admin dropdown" name="quantity">
+
         <option value="">No of servings</option>
+
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>
@@ -156,7 +162,7 @@ class Products_c extends CI_Controller {
 		// echo "<pre>";print_r($this->cart);die();
 		return $this->cart2;
 	}
-	
+
 	public function login()
 	{
 	  $email=$this->input->post('email');
@@ -261,7 +267,4 @@ class Products_c extends CI_Controller {
 	// }
 
 
-}	
-
-
-
+}

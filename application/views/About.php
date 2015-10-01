@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-
-<?php
+<?php 
   if ($this->session->userdata('logged_in') == TRUE) {
     $links = '<a class="ui inverted button" href="welcome/logout">Log Out</a>';
     $links2 = '<div class="item">
@@ -16,7 +15,7 @@
           <a class="ui orange button signup_btn">Sign Up</a>
         </div>';
   }
-
+  
 ?>
 <html>
 <head>
@@ -26,25 +25,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- Site Properities -->
-  <title>Products</title>
+  <title>Homepage</title>
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/dist/semantic.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/main.css">
   <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
   <script src="<?php echo base_url();?>assets/dist/semantic.js"></script>
   <script src="<?php echo base_url();?>assets/js/main.js"></script>
-
+ 
 </head>
 <body>
 <!-- Following Menu -->
   <header class="ui large top fixed hidden menu">
     <div class="ui container">
       <a class="active item">Home</a>
-
-      <a class="item">Products</a>
-      <a class="item">About</a>
-      <a class="item">Contact Us</a>
-             <div class="right menu">
-             <div class="item searchbar">
+      <a href="products_c" class="item">Product</a> About <a class="item">Contact Us</a>
+      <div class="right menu">
+      <div class="item searchbar">
           <div class="ui icon input">
             <input type="text" placeholder="Search...">
             <i class="search link icon"></i>
@@ -59,31 +55,27 @@
   </header>
 <!-- Sidebar Menu -->
 <div class="ui right orange vertical large very wide sidebar menu cart_sidebar">
-
   <a class="active item">CART<p class="ui right floated header"><?php //echo $cart_user; ?>
   </p></a>
   <?php
     echo $cart;
   ?>
-
+  
 </div>
 
 
 <!-- Page Contents -->
 <div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
+  <div class="ui inverted vertical masthead homepage_image center aligned segment">
 
     <div class="ui container">
       <div class="ui large secondary pointing menu">
+        <!-- <a class="active item">Home</a>
+        <a class="item">Work</a>
+        <a class="item">Company</a>
+        <a class="item">Careers</a> -->
         <a class="active item logo"><img class="ui small image" src="<?php echo ASSETS_URL;?>images/CastarlyRock.png"></a>
         <div class="right item">
-          <div class="item searchbar">
-              <div class="ui inverted icon input">
-                <input type="text" placeholder="Search...">
-                <i class="search link icon"></i>
-              </div>
-          </div>
-
           <?php echo $links;?>
           <a class="ui orange icon inverted button cart_button"><i class="cart icon"></i></a>
         </div>
@@ -92,80 +84,62 @@
 
     <div class="ui text container">
       <h1 class="ui inverted header">
-        Order Your Food from Your Favorite Restaurant
-      </h1>
+        Why Casterly Rock you Ask?</h1>
       <!-- <h2>Do whatever you want when you want to.</p> -->
       <!-- <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div> -->
-      <div class="ui segments add_to_cart">
-        <form id="cart" action="welcome/add_to_cart" method="post" enctype="multipart/form-data" >
-          <h3 class="ui inverted header">
-            <select class="ui dropdown" name="location">
-              <option value="">Choose Your Location</option>
-              <option value="madaraka">Madaraka</option>
-              <option value="cbd">CBD</option>
-              <option value="westlands">Westlands</option>
-            </select>
-          </h3>
-          <div class="ui centered grid">
-            <div class="six wide column">
-              <select class="ui dropdown" name="product">
-
-                <option value="">What would yu like to eat</option>
-
-                <option value="1">Chicken Wings</option>
-                <option value="2">Drum sticks</option>
-                <option value="3">Pork Chops</option>
-              </select>
-            </div>
-            <div class="six wide column">
-              <select class="ui dropdown" name="quantity">
-                <option value="">No of packages</option>
-
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-              </select>
-            </div>
-              <!-- <input type="hidden" name="customer_id" value="1" > -->
-              <div class="six wide center aligned column">
-                <button class="ui orange button">ADD</button>
-              </div>
-
-            </div>
-          </div>
-        </form>
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">We Have the best possible deals</h3>
+          <p>The food made by our top class chefs is sold at very affordable prices. Even with as low as Ksh 200 one can still enjoy any of our burgers or small pizzas.</p>
+          <h3 class="ui header">We Make Pork Chops That Can Dance</h3>
+          <p>Yes that's right, you thought it was the stuff of dreams, but even pork chops can be bioengineered. Our pork chops recipes range from different parts of the world thus placing them at the top of our customer favorites.</p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="<?php echo ASSETS_URL;?>images/food2.jpg" class="ui large bordered rounded image">
+        </div>
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+          <a class="ui huge button">Check Them Out</a>
+        </div>
       </div>
     </div>
   </div>
 
 
   <div class="ui vertical stripe quote segment">
-    <div class="ui equal width stackable internally celled grid product_list">
-    <div class="ui bottom attached segment filter_bar">
-      Choose category to filter:
-      <a class="ui button">
-        All
-      </a>
-      <a class="ui button">
-        Burger
-      </a>
-      <a class="ui button">
-        Pizza
-      </a>
-      <a class="ui button">
-        Pork
-      </a>
-      <a class="ui button">
-        Chicken
-      </a>
-      
-    </div>
-    <div class="two column row">
-      <?php echo $product_list;?>
-    </div>
-
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column">
+          <h3>"What a Company"</h3>
+          <p>That is what they all say about us</p>
+        </div>
+        <div class="column">
+          <h3>"I shouldn't have gone with their competitor."</h3>
+          <p>
+            <img src="<?php echo ASSETS_URL;?>images/chicken1.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
+          </p>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui text container">
+      <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
+      <p>Instead of focusing on just profits  and brand visibility, we have learned how to master the art of customer satisfaction by guaranteeing quality and efficacy in service delivery.</p>
+      <a class="ui large button">Read More</a>
+      <h4 class="ui horizontal header divider">
+        <a href="#">Case Studies</a>
+      </h4>
+      <h3 class="ui header">Did We Tell You About Our Sandwiches?</h3>
+      <p>Yes I know you probably disregarded the earlier boasts as non-sequitor filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our sandwiches can really dance. Not literally of course but in your mouth.</p>
+      <a class="ui large button">I'm Still Quite Interested</a>
+    </div>
+  </div>
+
 
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
@@ -202,6 +176,9 @@
   <div class="header">
     Login here
   </div>
+  
+ 
+    
     <form class="ui form" id="home_login" action="welcome/login" method="post" enctype="multipart/form-data" >
        <div class="field">
         <label>Email Address</label>
@@ -213,7 +190,7 @@
       </div>
       <button class="ui positive labeled icon button" type="submit"><i class="checkmark icon"></i>Submit</button>
     </form>
-
+ 
 </div>
 <!-- signup form -->
 <div class="ui modal signup_form">
@@ -233,7 +210,7 @@
       <div class="field">
         <label>Telephone Number</label>
         <input type="text" name="tel" id="tel" placeholder="Telephone Number">
-
+        
       </div>
       <div class="field">
         <label>Password</label>
@@ -253,7 +230,7 @@
   <div class="header">
     Cart
   </div>
-
+  
 <div class="ui middle aligned divided list all_contacts">
   <ul class="item">
     <?php

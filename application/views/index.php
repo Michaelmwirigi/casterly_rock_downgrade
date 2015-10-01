@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php 
+
+<?php
+
   if ($this->session->userdata('logged_in') == TRUE) {
     $links = '<a class="ui inverted button" href="welcome/logout">Log Out</a>';
     $links2 = '<div class="item">
@@ -15,7 +17,7 @@
           <a class="ui orange button signup_btn">Sign Up</a>
         </div>';
   }
-  
+
 ?>
 <html>
 <head>
@@ -31,17 +33,25 @@
   <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
   <script src="<?php echo base_url();?>assets/dist/semantic.js"></script>
   <script src="<?php echo base_url();?>assets/js/main.js"></script>
- 
+
 </head>
 <body>
 <!-- Following Menu -->
   <header class="ui large top fixed hidden menu">
     <div class="ui container">
       <a class="active item">Home</a>
-      <a href="products_c" class="item">Menu</a>
-      <a class="item">Company</a>
-      <a class="item">Careers</a>
+
+      <a href="products_c" class="item">Products</a>
+      <a class="item">About Us</a>
+      <a class="item">Contact Us</a>
       <div class="right menu">
+      <div class="item searchbar">
+          <div class="ui icon input">
+            <input type="text" placeholder="Search...">
+            <i class="search link icon"></i>
+          </div>
+      </div>
+
         <?php echo $links2;?>
          <div class="item">
           <a class="ui orange icon button cart_button"><i class="cart icon"></i></a>
@@ -65,7 +75,7 @@
   <?php
     echo $cart;
   ?>
-  
+
 </div>
 
 
@@ -81,6 +91,13 @@
         <a class="item">Careers</a> -->
         <a class="active item logo"><img class="ui small image" src="<?php echo ASSETS_URL;?>images/CastarlyRock.png"></a>
         <div class="right item">
+
+          <div class="item searchbar">
+              <div class="ui inverted icon input">
+                <input type="text" placeholder="Search...">
+                <i class="search link icon"></i>
+              </div>
+          </div>
           <?php echo $links;?>
           <a class="ui orange icon inverted button cart_button"><i class="cart icon"></i></a>
         </div>
@@ -124,7 +141,7 @@
               <div class="six wide center aligned column">
                 <button class="ui orange button">ADD</button>
               </div>
-              
+
             </div>
           </div>
         </form>
@@ -221,9 +238,7 @@
   <div class="header">
     Login here
   </div>
-  
- 
-    
+
     <form class="ui form" id="home_login" action="welcome/login" method="post" enctype="multipart/form-data" >
        <div class="field">
         <label>Email Address</label>
@@ -235,7 +250,7 @@
       </div>
       <button class="ui positive labeled icon button" type="submit"><i class="checkmark icon"></i>Submit</button>
     </form>
- 
+
 </div>
 <!-- signup form -->
 <div class="ui modal signup_form">
@@ -255,7 +270,7 @@
       <div class="field">
         <label>Telephone Number</label>
         <input type="text" name="tel" id="tel" placeholder="Telephone Number">
-        
+
       </div>
       <div class="field">
         <label>Password</label>
@@ -275,7 +290,7 @@
   <div class="header">
     Cart
   </div>
-  
+
 <div class="ui middle aligned divided list all_contacts">
   <ul class="item">
     <?php
