@@ -122,6 +122,25 @@
 
   <div class="ui vertical stripe quote segment">
     <div class="ui equal width stackable internally celled grid product_list">
+    <div class="ui bottom attached segment filter_bar">
+      Choose category to filter:
+      <a class="ui button">
+        All
+      </a>
+      <a class="ui button">
+        Burger
+      </a>
+      <a class="ui button">
+        Pizza
+      </a>
+      <a class="ui button">
+        Pork
+      </a>
+      <a class="ui button">
+        Chicken
+      </a>
+      
+    </div>
     <div class="two column row">
       <?php echo $product_list;?>
     </div>            

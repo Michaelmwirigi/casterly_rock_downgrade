@@ -100,11 +100,15 @@ public function add_product_to_cart()
     
   }
 
-  // function delete_cart_entry($cartid)
-  // {
-  //   $this->db->where('student_id', $id);
-  //   $this->db->delete('students');
-  // }
+  function products_filter($terms)
+  {
+      // Execute our SQL statement and return the result
+      $sql3 = "SELECT *
+              FROM `product`
+              WHERE MATCH (content) AGAINST (?) > 0";
+      $query = $this->db->query($sql, array($terms, $terms));
+      return $query->result();
+  }
 
 
 }
