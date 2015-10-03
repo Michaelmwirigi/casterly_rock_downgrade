@@ -39,11 +39,11 @@
 <!-- Following Menu -->
   <header class="ui large top fixed hidden menu">
     <div class="ui container">
-      <a class="active item">Home</a>
+      <a href="index.php" class="active item">Home</a>
 
-      <a href="products_c" class="item">Products</a>
-      <a class="item">About Us</a>
-      <a class="item">Contact Us</a>
+      <a href="products.php" class="item">Products</a>
+      <a href="About.php" class="item">About Us</a>
+      <a href="Contact Us.php" class="item">Contact Us</a>
       <div class="right menu">
       <div class="item searchbar">
           <div class="ui icon input">
