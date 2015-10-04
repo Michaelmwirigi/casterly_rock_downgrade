@@ -8,7 +8,7 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0'
       name='viewport'>
     <!-- Site Properities -->
-    <title>Contacts</title>
+    <title>Administration</title>
 
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/dist/semantic.css">
@@ -60,35 +60,7 @@
             <a class="item toggle_column3"><i class="circular info icon"></i></a>
           </div>
         </div>
-        <div class="contacts_top">
-            <ul class="ui bound sticky item">
-              <li class="ui relaxed small horizontal list contact_list">
-                <span class="ui checkbox item c_checkbox " id="selectall">
-                <input type="checkbox" tabindex="0" class="hidden" name="selectall">
-                </span>
-                <span class="item">
-                  <h2 class="ui header">3000</h2>
-                  total contacts
-                </span>
-                <span class="item">
-                  <h2 class="ui header">10</h2>
-                  not on whatsapp
-                </span>
-                <span class="item">
-                  <h2 class="ui header">5</h2>
-                  not sure
-                </span>
-                <span class="item">
-                  <h2 class="ui header">12</h2>
-                  not verified
-                </span>
-                <span class="item">
-                  <h2 class="ui header">2455</h2>
-                  not verified
-                </span>
-              </li>
-            </ul>
-          </div>
+        
         <div class=" ui grid contacts_content">
           
           

@@ -16,6 +16,7 @@
           <a class="ui orange button signup_btn">Sign Up</a>
         </div>';
   }
+
 ?>
 <html>
 <head>
@@ -91,7 +92,7 @@
 
     <div class="ui text container">
       <h1 class="ui inverted header">
-        Order Your Food from Your Favorite Restaurant
+        Order Your Food from Your Favorite Restaurantsssss
       </h1>
       <!-- <h2>Do whatever you want when you want to.</p> -->
       <!-- <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div> -->
@@ -142,13 +143,13 @@
     <div class="ui equal width stackable internally celled grid product_list">
     <div class="ui bottom attached segment filter_bar">
       Choose category to filter:
-      <a href="<?php echo base_url();?>/products_c" class="ui button">
+      <a href="products_c" class="ui button">
         All
       </a>
-      <a href="<?php echo base_url();?>products_c/display_products/burger" class="ui button">
+      <a href="products_c/filter_products/burger" class="ui button">
         Burger
       </a>
-      <a href="display_products/burger" class="ui button">
+      <a href="products_c/pizza" class="ui button">
         Pizza
       </a>
       <a href="products_c/pork" class="ui button">
@@ -160,10 +161,7 @@
       
     </div>
     <div class="two column row">
-
-      <?php echo $product_list;?>
-
-      
+      <?php echo $product_list2;?>
     </div>
 
     </div>

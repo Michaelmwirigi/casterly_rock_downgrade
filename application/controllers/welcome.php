@@ -41,15 +41,10 @@ class Welcome extends CI_Controller {
 			$data = $this->user_model->show_from_cart($user);
 			foreach ($data as $key => $value) {
 				$this->cart .= '<form class="item" action="welcome/remove_from_cart" method="post" enctype="multipart/form-data">
-<<<<<<< HEAD
-				<div class="header">'.$value["quantity"].' '.$value["ProdName"].
-				'<input type="hidden" name="cartid" value="'.$value["cartid"].'">'
-				.'<div class="ui right floated tiny buttons">
-=======
+
 				<div class="header"><p class="c_name">'.$value["ProdName"].'</p><p class="c_amt">'.$value["quantity"].'</p>
 				<input type="hidden" name="cartid" value="'.$value["cartid"].'">'
 				.'<div class="ui right floated tiny buttons ">
->>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
 				  <a class="ui orange button edit_cart">Change</a>
 				  <div class="or"></div>
 				  <button type="submit" class="ui red button">Remove</button>
@@ -90,11 +85,9 @@ class Welcome extends CI_Controller {
       
       <span class="item c_quantitiy">
       <select class="ui admin dropdown" name="quantity">
-<<<<<<< HEAD
-        <option value="">No of pieces</option>
-=======
+
         <option value="">No of servings</option>
->>>>>>> 65e1b574e7d9bb9979d1b568e073f81e8ed61e4f
+
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>

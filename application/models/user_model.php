@@ -90,24 +90,24 @@ public function add_product_to_cart()
     
   }
 
+  public function show_products_burger()
+  {
+    $sql3 = "SELECT * FROM `product` WHERE `category` = 'burger'";
+    // echo $sql;
+    $query4=$this->db->query($sql3);
+    
+    $result3 = $query4->result_array();
+    // echo "<pre>";print_r($result);
+    return $result3;
+    
+  }
+
 
   function delete_cart_entry($cartid,$customerid)
   {
     $this->db->where("Customerid",$customerid);
     $this->db->where("cartid",$cartid);
-    $this->db->delete('cart');
-
-    
-  }
-
-  function products_filter($terms)
-  {
-      // Execute our SQL statement and return the result
-      $sql3 = "SELECT *
-              FROM `product`
-              WHERE MATCH (content) AGAINST (?) > 0";
-      $query = $this->db->query($sql, array($terms, $terms));
-      return $query->result();
+    $this->db->delete('cart'); 
   }
 
 

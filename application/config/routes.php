@@ -41,6 +41,8 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
+//$route['products_c/filter_products/(:any)'] = "products_c/filter_products/";
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -28,7 +28,7 @@ $config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/casterly_rock_downgrad
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
