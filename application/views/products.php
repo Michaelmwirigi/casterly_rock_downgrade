@@ -2,9 +2,9 @@
 
 <?php
   if ($this->session->userdata('logged_in') == TRUE) {
-    $links = '<a class="ui inverted button" href="welcome/logout">Log Out</a>';
+    $links = '<a class="ui inverted button" href="'.base_url().'welcome/logout">Log Out</a>';
     $links2 = '<div class="item">
-          <a class="ui button" href="welcome/logout">Log Out</a>
+          <a class="ui button" href="'.base_url().'welcome/logout">Log Out</a>
         </div>';
   } else {
     $links = '<a class="ui inverted button login_btn">Log in</a>
@@ -37,11 +37,11 @@
 <!-- Following Menu -->
   <header class="ui large top fixed hidden menu">
     <div class="ui container">
-      <a href="index.php" class="active item">Home</a>
+      <a href="<?php echo base_url(); ?>welcome" class="active item">Home</a>
 
-      <a href="products.php" class="item">Products</a>
-      <a href="About.php" class="item">About</a>
-      <a href="Contact Us.php" class="item">Contact Us</a>
+      <a href="<?php echo base_url(); ?>product_c" class="item">Products</a>
+      <a href="" class="item">About</a>
+      <a href="" class="item">Contact Us</a>
              <div class="right menu">
              <div class="item searchbar">
           <div class="ui icon input">
@@ -96,7 +96,7 @@
       <!-- <h2>Do whatever you want when you want to.</p> -->
       <!-- <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div> -->
       <div class="ui segments add_to_cart">
-        <form id="cart" action="welcome/add_to_cart" method="post" enctype="multipart/form-data" >
+        <form id="cart" action="<?php echo base_url(); ?>welcome/add_to_cart" method="post" enctype="multipart/form-data" >
           <h3 class="ui inverted header">
             <select class="ui dropdown" name="location">
               <option value="">Choose Your Location</option>
@@ -142,19 +142,19 @@
     <div class="ui equal width stackable internally celled grid product_list">
     <div class="ui bottom attached segment filter_bar">
       Choose category to filter:
-      <a href="<?php echo base_url();?>/products_c" class="ui button">
+      <a href="<?php echo base_url(); ?>products_c" class="ui button">
         All
       </a>
-      <a href="<?php echo base_url();?>products_c/display_products/burger" class="ui button">
+      <a href="<?php echo base_url(); ?>products_c/display_products/burger" class="ui button">
         Burger
       </a>
-      <a href="display_products/burger" class="ui button">
+      <a href="<?php echo base_url(); ?>products_c/display_products/pizza" class="ui button">
         Pizza
       </a>
-      <a href="products_c/pork" class="ui button">
+      <a href="<?php echo base_url(); ?>products_c/display_products/pork" class="ui button">
         Pork
       </a>
-      <a href="products_c/chicken" class="ui button">
+      <a href="<?php echo base_url(); ?>products_c/display_products/chicken" class="ui button">
         Chicken
       </a>
       

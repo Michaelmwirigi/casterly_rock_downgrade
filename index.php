@@ -1,5 +1,5 @@
 <?php
-define('ASSETS_URL', 'http://localhost/casterly_rock_downgrade/assets/');
+define('ASSETS_URL', 'http://localhost/casterly_rock/assets/');
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT

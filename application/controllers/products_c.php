@@ -48,9 +48,10 @@ class Products_c extends CI_Controller {
 			$data = $this->user_model->show_from_cart($user);
 			foreach ($data as $key => $value) {
 				$this->cart .= '<form class="item" action="welcome/remove_from_cart" method="post" enctype="multipart/form-data">
-				<div class="header">'.$value["quantity"].' '.$value["ProdName"].
-				'<input type="hidden" name="cartid" value="'.$value["cartid"].'">'
-				.'<div class="ui right floated tiny buttons">
+
+				<div class="header"><p class="c_name">'.$value["ProdName"].'</p><p class="c_amt">'.$value["quantity"].'</p>
+				<input type="hidden" name="cartid" value="'.$value["cartid"].'">'
+				.'<div class="ui right floated tiny buttons ">
 				  <a class="ui orange button edit_cart">Change</a>
 				  <div class="or"></div>
 				  <button type="submit" class="ui red button">Remove</button>
@@ -124,7 +125,7 @@ class Products_c extends CI_Controller {
 		//$product_data2 = $this->user_model->show_products();
 		//echo "<pre>";print_r($product_filter);die();
 
-		 if ($product_filter == "burger"){
+		if ($product_filter == "burger"){
 			$product_data = $this->user_model->show_products_burger();
 			//echo "<pre>";print_r($product_data);die();
 
@@ -156,13 +157,100 @@ class Products_c extends CI_Controller {
 
 			    </form>';
 			    //echo "<pre>";print_r($this->product_list);die();
-			   $savefilter = $this->product_list;
-			   $this->redirect_filter($savefilter);
+			   
 			   //echo "<pre>";print_r($savefilter);die();
 			    //$this->load->view('products', );
 			    //redirect('/products_c');
 			}
 			//return $this->product_list;
+			$savefilter = $this->product_list;
+			   $this->redirect_filter($savefilter);
+			
+		}
+
+		else if ($product_filter == "chicken"){
+			$product_data = $this->user_model->show_products_chicken();
+			//echo "<pre>";print_r($product_data);die();
+
+			foreach ($product_data as $key => $value2) {
+
+				$this->product_list.=
+
+				'<form class="column" action="products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+
+			        <div class="ui card">
+			            <div class="image">
+			              <img src="'.ASSETS_URL.''.$value2["ImageAddr"].'">
+			            </div>
+			            <div class="content">
+			              <div class="header">'.$value2["ProdName"].'</div>
+			              <div class="meta">
+			                <a>'.$value2["category"].'</a>
+			              </div>
+			              <div class="description">
+			                '.$value2["description"].'
+			              </div>
+			            </div>
+			            <input type="hidden" name="product" value="'.$value2["Productid"].'">
+			            <button class="ui bottom attached button">
+				            <i class="add icon"></i>
+				            Add to cart
+			            </button>
+			        </div>
+
+			    </form>';
+			    //echo "<pre>";print_r($this->product_list);die();
+			   
+			   //echo "<pre>";print_r($savefilter);die();
+			    //$this->load->view('products', );
+			    //redirect('/products_c');
+			}
+			//return $this->product_list;
+			$savefilter = $this->product_list;
+			$this->redirect_filter($savefilter);
+			
+		}
+
+		else if ($product_filter == "pork"){
+			$product_data = $this->user_model->show_products_pork();
+			//echo "<pre>";print_r($product_data);die();
+
+			foreach ($product_data as $key => $value2) {
+
+				$this->product_list.=
+
+				'<form class="column" action="products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+
+			        <div class="ui card">
+			            <div class="image">
+			              <img src="'.ASSETS_URL.''.$value2["ImageAddr"].'">
+			            </div>
+			            <div class="content">
+			              <div class="header">'.$value2["ProdName"].'</div>
+			              <div class="meta">
+			                <a>'.$value2["category"].'</a>
+			              </div>
+			              <div class="description">
+			                '.$value2["description"].'
+			              </div>
+			            </div>
+			            <input type="hidden" name="product" value="'.$value2["Productid"].'">
+			            <button class="ui bottom attached button">
+				            <i class="add icon"></i>
+				            Add to cart
+			            </button>
+			        </div>
+
+			    </form>';
+			    //echo "<pre>";print_r($this->product_list);die();
+			   
+			   //echo "<pre>";print_r($savefilter);die();
+			    //$this->load->view('products', );
+			    //redirect('/products_c');
+			}
+			//return $this->product_list;
+			$savefilter = $this->product_list;
+			$this->redirect_filter($savefilter);
 			
 		}
 		
@@ -205,9 +293,10 @@ class Products_c extends CI_Controller {
 
 		else{
 				//echo "<pre>";print_r("function null");die();
-			$this->product_list2 = 'error in loading products. Contact our support team and wwe will sort you out as soon as possible';
-			return $this->product_list2;
-			redirect('/welcome');
+			$this->product_list = 'The category selected is unavailable. Contact our support team and we will get back to you as soon as possible.';
+			$savefilter = $this->product_list;
+			$this->redirect_filter($savefilter);
+			//redirect('/welcome');
 		}
 
 		//return $this->product_list;

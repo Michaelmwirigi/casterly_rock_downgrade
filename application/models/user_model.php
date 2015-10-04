@@ -102,6 +102,32 @@ public function add_product_to_cart()
     
   }
 
+  public function show_products_pork()
+  {
+    $sql3 = "SELECT * FROM `product` WHERE `category` = 'pork'";
+    // echo $sql;
+    $query4=$this->db->query($sql3);
+    
+    $result3 = $query4->result_array();
+    // echo "<pre>";print_r($result);
+    return $result3;
+    
+  }
+
+  public function show_products_chicken()
+  {
+    $sql3 = "SELECT * FROM `product` WHERE `category` = 'chicken'";
+    // echo $sql;
+    $query4=$this->db->query($sql3);
+    
+    $result3 = $query4->result_array();
+    // echo "<pre>";print_r($result);
+    return $result3;
+    
+  }
+
+
+
 
   function delete_cart_entry($cartid,$customerid)
   {
