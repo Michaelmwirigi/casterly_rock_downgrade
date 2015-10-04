@@ -39,11 +39,11 @@
 <!-- Following Menu -->
   <header class="ui large top fixed hidden menu">
     <div class="ui container">
-      <a class="active item">Home</a>
+      <a href="index.php" class="active item">Home</a>
 
-      <a href="products_c" class="item">Products</a>
-      <a class="item">About Us</a>
-      <a class="item">Contact Us</a>
+      <a href="products.php" class="item">Products</a>
+      <a href="About.php" class="item">About Us</a>
+      <a href="Contact Us.php" class="item">Contact Us</a>
       <div class="right menu">
       <div class="item searchbar">
           <div class="ui icon input">
@@ -123,7 +123,7 @@
           <div class="ui centered grid">
             <div class="six wide column">
               <select class="ui dropdown" name="product">
-                <option value="">What would yu like to eat</option>
+                <option value="">What would you like to eat</option>
                 <option value="1">Chicken Wings</option>
                 <option value="2">Drum sticks</option>
                 <option value="3">Pork Chops</option>
@@ -153,10 +153,10 @@
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="eight wide column">
-          <h3 class="ui header">We Help Companies and Companions</h3>
-          <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-          <h3 class="ui header">We Make Bananas That Can Dance</h3>
-          <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+          <h3 class="ui header">We always leave you craving for more </h3>
+          <p>Our Chefs have the best recipes for all our meals ensuring the casterly rock taste stays with you forever.</p>
+          <h3 class="ui header">We Make Pork CHops  That Can Dance</h3>
+          <p>Yes that's right, you thought it was the stuff of dreams, but even pork chops can be bioengineered.</p>
         </div>
         <div class="six wide right floated column">
           <img src="<?php echo ASSETS_URL;?>images/food2.jpg" class="ui large bordered rounded image">
@@ -196,7 +196,7 @@
       <h4 class="ui horizontal header divider">
         <a href="#">Case Studies</a>
       </h4>
-      <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
+      <h3 class="ui header">Did We Tell You About Our Pork CHops?</h3>
       <p>Yes I know you probably disregarded the earlier boasts as non-sequitor filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
       <a class="ui large button">I'm Still Quite Interested</a>
     </div>
