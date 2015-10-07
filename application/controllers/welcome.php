@@ -40,11 +40,12 @@ class Welcome extends CI_Controller {
 		if ($user != NULL) {
 			$data = $this->user_model->show_from_cart($user);
 			foreach ($data as $key => $value) {
-				$this->cart .= '<form class="item" action="welcome/remove_from_cart" method="post" enctype="multipart/form-data">
+				$item_price = $value["price"] * $value["quantity"];
+				$this->cart .= '<form class="item" action="'.base_url().'welcome/remove_from_cart" method="post" enctype="multipart/form-data">
 
-				<div class="header"><p class="c_name">'.$value["ProdName"].'</p><p class="c_amt">'.$value["quantity"].'</p>
+				<div class="header"><p class="c_name">'.$value["ProdName"].'</p><p class="c_amt">'.$value["quantity"].'</p><p class="c_price">shs'.$item_price.'</p>
 				<input type="hidden" name="cartid" value="'.$value["cartid"].'">'
-				.'<div class="ui right floated tiny buttons ">
+				.'<div class="ui right floated mini buttons ">
 				  <a class="ui orange button edit_cart">Change</a>
 				  <div class="or"></div>
 				  <button type="submit" class="ui red button">Remove</button>
@@ -57,6 +58,36 @@ class Welcome extends CI_Controller {
 		return $this->cart;
 	}
 
+	function cart_checkout(){
+		$user = $this->session->userdata('user_id');
+		$cart_content = $this->user_model->show_from_cart($user);
+		//echo "<pre>";print_r($data);die();
+
+		//$insert = $this->user_model->checkout($cart_content);
+
+		foreach ($cart_content as $key => $value) {
+	       //echo "<pre>";print_r($value['Customerid']);die();
+	      $data3=array(
+
+	        'userid'=>$value['Customerid'],
+	        'price'=>$value['price'] * $value['quantity'],
+	        'productname'=>$value['ProdName'],
+	        'productid'=>$value['Productid'],
+	        'quantity'=>$value['quantity'],
+
+	      );
+	      $this->user_model->checkout($data3);
+	    }
+
+		if ($data3) {
+			redirect('welcome');
+		} else {
+			echo "<pre>";print_r("not working ...shucks");die();
+		print "Failed to checkout";
+		}
+		
+	}
+
 	function create_full_cart()
 	{
 		$user = $this->session->userdata('user_id');
@@ -64,7 +95,7 @@ class Welcome extends CI_Controller {
 			$data = $this->user_model->show_from_cart($user);
 			foreach ($data as $key => $value) {
 				$cart_id=$value["cartid"];
-				$this->cart2 .= '<form class="ui horizontal list cart_list" action="welcome/edit_cart" method="post" enctype="multipart/form-data">
+				$this->cart2 .= '<form class="ui horizontal list cart_list" action="'.base_url().'welcome/edit_cart" method="post" enctype="multipart/form-data">
 
       <span class="item c_name">
         <select class="ui dropdown" name="product">
@@ -130,7 +161,7 @@ class Welcome extends CI_Controller {
 
 	 public function registration()
 	{
-		$random = $this->authentication_key();
+		//$random = $this->authentication_key();
 	  //$this->load->library('form_validation');
 	  // field name, error message, validation rules
 		$insert = $this->user_model->add_user($random);

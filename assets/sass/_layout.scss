@@ -26,12 +26,17 @@ header{
     }
     .c_amt{
       display: inline-block !important;
+      width: 15%;
+      text-align: center;
+    }
+    .c_price{
+      display: inline-block !important;
       width: 20%;
       text-align: center;
     }
     .c_edit{
       display: inline-block !important;
-      width: 45%;
+      width: 30%;
       text-align: center;
     }
   }

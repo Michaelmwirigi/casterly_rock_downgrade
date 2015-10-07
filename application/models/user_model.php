@@ -68,7 +68,7 @@ public function add_product_to_cart()
 
   public function show_from_cart($user_id)
   {
-    $sql = "SELECT `pd`.`ProdName`, `ct`.`quantity`, `ct`.`Customerid`, `ct`.`cartid` FROM `cart` `ct` JOIN `product` `pd` ON `ct`.`productid` = `pd`.`Productid` WHERE `ct`.`Customerid` = '$user_id'";
+    $sql = "SELECT `pd`.`ProdName`,`pd`.`Productid`, `pd`.`price`, `ct`.`quantity`, `ct`.`Customerid`, `ct`.`cartid` FROM `cart` `ct` JOIN `product` `pd` ON `ct`.`productid` = `pd`.`Productid` WHERE `ct`.`Customerid` = '$user_id'";
     // echo $sql;
     $query2=$this->db->query($sql);
     
@@ -102,6 +102,18 @@ public function add_product_to_cart()
     
   }
 
+  public function show_products_pizza()
+  {
+    $sql3 = "SELECT * FROM `product` WHERE `category` = 'pizza'";
+    // echo $sql;
+    $query4=$this->db->query($sql3);
+    
+    $result3 = $query4->result_array();
+    // echo "<pre>";print_r($result);
+    return $result3;
+    
+  }
+
   public function show_products_pork()
   {
     $sql3 = "SELECT * FROM `product` WHERE `category` = 'pork'";
@@ -126,7 +138,12 @@ public function add_product_to_cart()
     
   }
 
-
+  function checkout($data3){
+    //echo "<pre>";print_r($cart_content);die();
+    //echo "<pre>";print_r($cart_content['1']['price']);die();
+    
+    return $this->db->insert('orderdetails', $data3);
+  }
 
 
   function delete_cart_entry($cartid,$customerid)

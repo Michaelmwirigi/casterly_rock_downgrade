@@ -47,15 +47,20 @@ class Products_c extends CI_Controller {
 		if ($user != NULL) {
 			$data = $this->user_model->show_from_cart($user);
 			foreach ($data as $key => $value) {
+				$item_price = $value["price"] * $value["quantity"];
+				//echo "<pre>";print_r($item_price);die();
 				$this->cart .= '<form class="item" action="welcome/remove_from_cart" method="post" enctype="multipart/form-data">
 
-				<div class="header"><p class="c_name">'.$value["ProdName"].'</p><p class="c_amt">'.$value["quantity"].'</p>
+				<div class="header"><p class="c_name">'.$value["ProdName"].'</p><p class="c_amt">'.$value["quantity"].'</p><p class="c_price">shs'.$item_price.'</p>
 				<input type="hidden" name="cartid" value="'.$value["cartid"].'">'
-				.'<div class="ui right floated tiny buttons ">
+				.'<div class="ui right floated mini buttons ">
 				  <a class="ui orange button edit_cart">Change</a>
 				  <div class="or"></div>
 				  <button type="submit" class="ui red button">Remove</button>
-				</div></div></form>';
+				</div></div></form>
+
+				
+				';
 			}
 		} else {
 			$this->cart = '<div class="item"><p class="left floated header">No item in the Cart</p></div>';
@@ -133,7 +138,7 @@ class Products_c extends CI_Controller {
 
 				$this->product_list.=
 
-				'<form class="column" action="products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+				'<form class="column" action="'.base_url().'products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
 
 			        <div class="ui card">
 			            <div class="image">
@@ -148,6 +153,7 @@ class Products_c extends CI_Controller {
 			                '.$value2["description"].'
 			              </div>
 			            </div>
+						<input type="hidden" name="quantity" value="1">
 			            <input type="hidden" name="product" value="'.$value2["Productid"].'">
 			            <button class="ui bottom attached button">
 				            <i class="add icon"></i>
@@ -176,7 +182,7 @@ class Products_c extends CI_Controller {
 
 				$this->product_list.=
 
-				'<form class="column" action="products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+				'<form class="column" action="'.base_url().'products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
 
 			        <div class="ui card">
 			            <div class="image">
@@ -191,6 +197,51 @@ class Products_c extends CI_Controller {
 			                '.$value2["description"].'
 			              </div>
 			            </div>
+			            <input type="hidden" name="quantity" value="1">
+			            <input type="hidden" name="product" value="'.$value2["Productid"].'">
+			            <button class="ui bottom attached button">
+				            <i class="add icon"></i>
+				            Add to cart
+			            </button>
+			        </div>
+
+			    </form>';
+			    //echo "<pre>";print_r($this->product_list);die();
+			   
+			   //echo "<pre>";print_r($savefilter);die();
+			    //$this->load->view('products', );
+			    //redirect('/products_c');
+			}
+			//return $this->product_list;
+			$savefilter = $this->product_list;
+			$this->redirect_filter($savefilter);
+			
+		}
+
+		else if ($product_filter == "pizza"){
+			$product_data = $this->user_model->show_products_pizza();
+			//echo "<pre>";print_r($product_data);die();
+
+			foreach ($product_data as $key => $value2) {
+
+				$this->product_list.=
+
+				'<form class="column" action="'.base_url().'products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+
+			        <div class="ui card">
+			            <div class="image">
+			              <img src="'.ASSETS_URL.''.$value2["ImageAddr"].'">
+			            </div>
+			            <div class="content">
+			              <div class="header">'.$value2["ProdName"].'</div>
+			              <div class="meta">
+			                <a>'.$value2["category"].'</a>
+			              </div>
+			              <div class="description">
+			                '.$value2["description"].'
+			              </div>
+			            </div>
+			            <input type="hidden" name="quantity" value="1">
 			            <input type="hidden" name="product" value="'.$value2["Productid"].'">
 			            <button class="ui bottom attached button">
 				            <i class="add icon"></i>
@@ -219,7 +270,7 @@ class Products_c extends CI_Controller {
 
 				$this->product_list.=
 
-				'<form class="column" action="products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+				'<form class="column" action="'.base_url().'products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
 
 			        <div class="ui card">
 			            <div class="image">
@@ -234,6 +285,7 @@ class Products_c extends CI_Controller {
 			                '.$value2["description"].'
 			              </div>
 			            </div>
+			            <input type="hidden" name="quantity" value="1">
 			            <input type="hidden" name="product" value="'.$value2["Productid"].'">
 			            <button class="ui bottom attached button">
 				            <i class="add icon"></i>
@@ -260,7 +312,7 @@ class Products_c extends CI_Controller {
 
 				$this->product_list.=
 
-				'<form class="column" action="products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+				'<form class="column" action="'.base_url().'products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
 
 			        <div class="ui card">
 			            <div class="image">
@@ -275,9 +327,10 @@ class Products_c extends CI_Controller {
 			                '.$value2["description"].'
 			              </div>
 			            </div>
+			            <input type="hidden" name="quantity" value="1">
 			            <input type="hidden" name="product" value="'.$value2["Productid"].'">
 			            <button class="ui bottom attached button">
-				            <i class="add icon"></i>
+				            <i class="add to cart icon"></i>
 				            Add to cart
 			            </button>
 			        </div>
@@ -344,7 +397,7 @@ class Products_c extends CI_Controller {
 			$data = $this->user_model->show_from_cart($user);
 			foreach ($data as $key => $value) {
 				$cart_id=$value["cartid"];
-				$this->cart2 .= '<form class="ui horizontal list cart_list" action="welcome/edit_cart" method="post" enctype="multipart/form-data">
+				$this->cart2 .= '<form class="ui horizontal list cart_list" action="'.base_url().'welcome/edit_cart" method="post" enctype="multipart/form-data">
 
       <span class="item c_name">
         <select class="ui dropdown" name="product">

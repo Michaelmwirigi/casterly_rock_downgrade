@@ -70,11 +70,17 @@
     <p class="c_amt">
       Servings
     </p>
+    <p class="c_price">price</p>
     <p class="c_edit">Edit Order</p>
   </div>
   <?php
     echo $cart;
   ?>
+
+  <div class="item">
+    Finished shopping?   
+    <a class="ui button" href="<?php echo base_url(); ?>welcome/cart_checkout" >Check out</a>
+  </div>
 
 </div>
 

@@ -25,7 +25,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- Site Properities -->
-  <title>Products</title>
+  <title>Orders</title>
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/dist/semantic.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/main.css">
   <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
@@ -74,11 +74,7 @@
   <?php
     echo $cart;
   ?>
-  <div class="item">
-    Finished shopping?   
-    <a class="ui button" href="<?php echo base_url(); ?>welcome/cart_checkout" >Check out</a>
-  </div>
-  </div>
+
 </div>
 
 
