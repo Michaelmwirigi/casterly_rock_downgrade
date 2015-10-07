@@ -138,7 +138,7 @@ class Products_c extends CI_Controller {
 
 				$this->product_list.=
 
-				'<form class="column" action="'.base_url().'products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+				'<form class="column" action="'.base_url().'index.php/products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
 
 			        <div class="ui card">
 			            <div class="image">
@@ -182,7 +182,7 @@ class Products_c extends CI_Controller {
 
 				$this->product_list.=
 
-				'<form class="column" action="'.base_url().'products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+				'<form class="column" action="'.base_url().'index.php/products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
 
 			        <div class="ui card">
 			            <div class="image">
@@ -226,7 +226,7 @@ class Products_c extends CI_Controller {
 
 				$this->product_list.=
 
-				'<form class="column" action="'.base_url().'products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+				'<form class="column" action="'.base_url().'index.php/products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
 
 			        <div class="ui card">
 			            <div class="image">
@@ -270,7 +270,7 @@ class Products_c extends CI_Controller {
 
 				$this->product_list.=
 
-				'<form class="column" action="'.base_url().'products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+				'<form class="column" action="'.base_url().'index.php/products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
 
 			        <div class="ui card">
 			            <div class="image">
@@ -312,7 +312,7 @@ class Products_c extends CI_Controller {
 
 				$this->product_list.=
 
-				'<form class="column" action="'.base_url().'products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
+				'<form class="column" action="'.base_url().'index.php/products_c/add_to_cart_products" method="post" enctype="multipart/form-data">
 
 			        <div class="ui card">
 			            <div class="image">
@@ -397,7 +397,7 @@ class Products_c extends CI_Controller {
 			$data = $this->user_model->show_from_cart($user);
 			foreach ($data as $key => $value) {
 				$cart_id=$value["cartid"];
-				$this->cart2 .= '<form class="ui horizontal list cart_list" action="'.base_url().'welcome/edit_cart" method="post" enctype="multipart/form-data">
+				$this->cart2 .= '<form class="ui horizontal list cart_list" action="'.base_url().'index.php/welcome/edit_cart" method="post" enctype="multipart/form-data">
 
       <span class="item c_name">
         <select class="ui dropdown" name="product">

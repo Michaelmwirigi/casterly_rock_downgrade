@@ -41,7 +41,7 @@ class Welcome extends CI_Controller {
 			$data = $this->user_model->show_from_cart($user);
 			foreach ($data as $key => $value) {
 				$item_price = $value["price"] * $value["quantity"];
-				$this->cart .= '<form class="item" action="'.base_url().'welcome/remove_from_cart" method="post" enctype="multipart/form-data">
+				$this->cart .= '<form class="item" action="'.base_url().'index.php/welcome/remove_from_cart" method="post" enctype="multipart/form-data">
 
 				<div class="header"><p class="c_name">'.$value["ProdName"].'</p><p class="c_amt">'.$value["quantity"].'</p><p class="c_price">shs'.$item_price.'</p>
 				<input type="hidden" name="cartid" value="'.$value["cartid"].'">'
@@ -95,7 +95,7 @@ class Welcome extends CI_Controller {
 			$data = $this->user_model->show_from_cart($user);
 			foreach ($data as $key => $value) {
 				$cart_id=$value["cartid"];
-				$this->cart2 .= '<form class="ui horizontal list cart_list" action="'.base_url().'welcome/edit_cart" method="post" enctype="multipart/form-data">
+				$this->cart2 .= '<form class="ui horizontal list cart_list" action="'.base_url().'index.php/welcome/edit_cart" method="post" enctype="multipart/form-data">
 
       <span class="item c_name">
         <select class="ui dropdown" name="product">

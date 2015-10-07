@@ -3,9 +3,9 @@
 <?php
 
   if ($this->session->userdata('logged_in') == TRUE) {
-    $links = '<a class="ui inverted button" href="'.base_url().'welcome/logout">Log Out</a>';
+    $links = '<a class="ui inverted button" href="'.base_url().'index.php/welcome/logout">Log Out</a>';
     $links2 = '<div class="item">
-          <a class="ui button" href="'.base_url().'welcome/logout">Log Out</a>
+          <a class="ui button" href="'.base_url().'index.php/welcome/logout">Log Out</a>
         </div>';
   } else {
     $links = '<a class="ui inverted button login_btn">Log in</a>
@@ -39,7 +39,7 @@
 <!-- Following Menu -->
   <header class="ui large top fixed hidden menu">
     <div class="ui container">
-      <a href="<?php echo base_url(); ?>welcome" class="active item">Home</a>
+      <a href="<?php echo base_url(); ?>index.php/welcome" class="active item">Home</a>
 
       <a href="products_c" class="item">Products</a>
       <a href="" class="item">About Us</a>
@@ -79,7 +79,7 @@
 
   <div class="item">
     Finished shopping?   
-    <a class="ui button" href="<?php echo base_url(); ?>welcome/cart_checkout" >Check out</a>
+    <a class="ui button" href="<?php echo base_url(); ?>index.php/welcome/cart_checkout" >Check out</a>
   </div>
 
 </div>
